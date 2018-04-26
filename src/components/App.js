@@ -33,7 +33,7 @@ fetchHogs = () => {
   if (this.state.filters.greased === 'all'){
     this.setState({hogs: hogs})
   }
-  else if (this.state.filters.greased){
+  else if (this.state.filters.greased === 'greased'){
     this.setState({hogs: hogs.filter(hog => hog.greased)})
 
   }
@@ -42,12 +42,11 @@ fetchHogs = () => {
   }
 }
 handleClickedHogs = hog => {
-  console.log('dnflakdfnafjdnflak', hog)
     if (!this.state.clickedHogs.includes(hog)){
       this.setState({clickedHogs: [...this.state.clickedHogs,hog]})
     }
     else {
-      this.setState({clickedHogs: this.state.clickedHogs.filter(newHog => newHog!=hog)})
+      this.setState({clickedHogs: this.state.clickedHogs.filter(newHog => newHog!==hog)})
     }
   }
 

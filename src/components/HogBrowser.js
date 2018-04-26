@@ -12,7 +12,7 @@ class HogBrowser extends React.Component{
       }
     )
     return(
-      <div className="ui cards">
+      <div className="ui grid container">
       {renderHogs}
       </div>
     )

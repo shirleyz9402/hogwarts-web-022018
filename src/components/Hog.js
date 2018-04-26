@@ -14,17 +14,18 @@ class Hog extends React.Component{
   }
 
   render(){
-    console.log(this.props.hog)
+    const {hog: {name, specialty, weight, greased, medal}} = this.props
+    const fileName = Object.values({name}).toString().replace(/ /g, '_').toLowerCase() + '.jpg'
     return (
-      <div id={this.props.hog} className="ui grid container" onClick={this.handleClick}>
-        <h1>{this.props.hog.name}</h1>
-      <img id={this.props.hog} src='../hog-imgs/cherub.jpg'/>
+      <div id={this.props} className="ui eight wide column" onClick={this.handleClick}>
+        <h1>{name}</h1>
+      <img id={this.props} src={require(`../hog-imgs/${fileName}`)} />
       {this.state.clicked ?
-        <div id={this.props.hog} className="details">
-          <p>Specialty:{this.props.hog.specialty}</p>
-          <p>Weight:{this.props.hog.weight}</p>
-          <p>Greased:{this.props.hog.greased}</p>
-          <p>Highest Medal Achieved: {this.props.hog.medal}</p>
+        <div id={this.props} className="details">
+          <p>Specialty:{specialty}</p>
+          <p>Weight:{weight}</p>
+          <p>Greased:{greased ? "true" : "false"}</p>
+          <p>Highest Medal Achieved: {medal}</p>
         </div> : ""
       }
       </div>

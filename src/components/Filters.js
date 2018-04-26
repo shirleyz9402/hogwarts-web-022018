@@ -6,13 +6,13 @@ class Filters extends React.Component {
   }
   render(){
     return (
-      <div className="ui form">
+      <div >
         <h3>Greased?</h3>
         <div className="field">
           <select name="type" id="type" onChange={this.handleOnChangeGreased} value={this.props.filters.greased}>
             <option value="all">All</option>
-            <option value='true'>Greased</option>
-            <option value='false'>Not Greased</option>
+            <option value='greased'>Greased</option>
+            <option value='not greased'>Not Greased</option>
           </select>
         </div>
 
